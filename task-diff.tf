@@ -13,9 +13,17 @@ resource "aws_ecs_task_definition" "python-project" {
     "image": "${aws_ecr_repository.python-project.repository_url}:latest",
     "cpu": 1024,
     "memory": 2048,
-    "essential": true
-  }
-]
+    "essential": true,
+    "portMappings": [
+        {
+          "containerPort": 80,
+          "hostPort": 80
+        }
+      ]
+    
+     
+   }
+ ]
 TASK_DEFINITION
 
 #   runtime_platform {

@@ -1,5 +1,5 @@
 resource "aws_subnet" "vpc_prod_subnet" {
-    count = 2
+    count = 3
     vpc_id = aws_vpc.mini-prod-vpc.id
    cidr_block =var.vpc_prod_subnet[count.index]
    availability_zone = var.az[count.index]
