@@ -5,7 +5,7 @@ resource "aws_instance" "prod-instance" {
     associate_public_ip_address = true
     security_groups = [ aws_security_group.mini-project-sg.id ]
 
-    count = 3
+    count = 1
     subnet_id = aws_subnet.vpc_prod_subnet[0].id
        key_name = "IAM"
        tags = {
