@@ -4,13 +4,13 @@ resource "aws_ecs_task_definition" "python-project" {
   network_mode             = "awsvpc"
   cpu                      = 1024
   memory                   = 2048
-  execution_role_arn = "arn:aws:iam::992382601924:role/fusion-dev-frontend-role"
+  execution_role_arn = aws_iam_role.ecs_task_execution_role.arn
   
   container_definitions    = <<TASK_DEFINITION
 [
   {
     "name": "python-project-container",
-    "image": "${aws_ecr_repository.python-project.repository_url}:latest",
+    "image": "992382601924.dkr.ecr.ap-south-1.amazonaws.com/python-project:latest",
     "cpu": 1024,
     "memory": 2048,
     "essential": true,
@@ -31,3 +31,4 @@ TASK_DEFINITION
 #     cpu_architecture        = "X86_64"
 #   }
 }
+# "arn:aws:iam::992382601924:role/fusion-dev-frontend-role"

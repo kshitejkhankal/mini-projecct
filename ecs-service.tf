@@ -16,5 +16,6 @@ resource "aws_ecs_service" "ecs-project-ecs" {
     container_name   = "python-project-container"
     container_port   = 80
   }
+  depends_on = [ aws_lb_listener.lb-listner ]
   
 }
