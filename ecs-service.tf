@@ -4,14 +4,12 @@ resource "aws_ecs_service" "ecs-project-ecs" {
   task_definition = aws_ecs_task_definition.python-project.arn
   desired_count   = 1
   launch_type     = "FARGATE"
-  service_connect_configuration {
-    enabled = true
-  }
+  
    
 
   
   network_configuration {
-    
+    assign_public_ip = true
     subnets         = [aws_subnet.vpc_prod_subnet[0].id,aws_subnet.vpc_prod_subnet[1].id,aws_subnet.vpc_prod_subnet[2].id]
     security_groups = [aws_security_group.mini-project-sg.id]
   }
