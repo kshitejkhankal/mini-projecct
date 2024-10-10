@@ -32,7 +32,7 @@ resource "aws_ecs_task_definition" "python-project" {
 TASK_DEFINITION
 
   runtime_platform {
-    operating_system_family = "Linux"
+    operating_system_family = "Linux/X86_64"
     cpu_architecture        = "X86_64"
   }
 }
