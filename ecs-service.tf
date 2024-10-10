@@ -4,7 +4,10 @@ resource "aws_ecs_service" "ecs-project-ecs" {
   task_definition = aws_ecs_task_definition.python-project.arn
   desired_count   = 1
   launch_type     = "FARGATE"
-  
+  service_connect_configuration {
+    enabled = true
+  }
+   
 
   
   network_configuration {
