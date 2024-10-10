@@ -4,7 +4,7 @@ resource "aws_lb" "project-lb" {
     load_balancer_type = "application"
      enable_deletion_protection = false
      security_groups = [ aws_security_group.mini-project-sg.id ]
-     subnets = [ aws_subnet.vpc_prod_subnet[0].id,aws_subnet.vpc_prod_subnet[1].id ]
+     subnets = [ aws_subnet.vpc_prod_subnet[3].id,aws_subnet.vpc_prod_subnet[4].id ]
      
     
   
