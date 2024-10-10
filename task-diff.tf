@@ -32,8 +32,9 @@ resource "aws_ecs_task_definition" "python-project" {
 TASK_DEFINITION
 
   runtime_platform {
-    operating_system_family = "Linux/X86_64"
-    cpu_architecture        = "X86_64"
+    # operating_system_family = "Linux/X86_64"
+    cpu_architecture        = "Linux/X86_64"
+
   }
 }
 # "arn:aws:iam::992382601924:role/fusion-dev-frontend-role"
