@@ -20,8 +20,8 @@ resource "aws_ecs_task_definition" "python-project" {
           "containerPort": 80,
           "hostPort": 80
           "Protocol":tcp,
-          "App protocol":HTTP,
-          "Port name":80
+          "App protocol":HTTP
+          
           
         }
       ]
