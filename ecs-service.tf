@@ -5,6 +5,8 @@ resource "aws_ecs_service" "ecs-project-ecs" {
   desired_count   = 1
   launch_type     = "FARGATE"
   
+
+  
   network_configuration {
     
     subnets         = [aws_subnet.vpc_prod_subnet[0].id,aws_subnet.vpc_prod_subnet[1].id,aws_subnet.vpc_prod_subnet[2].id]
@@ -15,6 +17,9 @@ resource "aws_ecs_service" "ecs-project-ecs" {
     target_group_arn = aws_lb_target_group.ecs-project-target.arn
     container_name   = "python-project-container"
     container_port   = 80
+    
+    
+  
   }
   depends_on = [ aws_lb_listener.lb-listner ]
   

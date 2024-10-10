@@ -14,8 +14,8 @@ resource "aws_lb_target_group" "ecs-project-target" {
     matcher             = "200"
   }
 }
-# resource "aws_lb_target_group_attachment" "ecs-target" {
-#   target_group_arn = aws_lb_target_group.ecs-project-target.arn
-#   target_id        = "70.0.1.5"
-#   port             = 80
-# }
+resource "aws_lb_target_group_attachment" "ecs-target" {
+  target_group_arn = aws_lb_target_group.ecs-project-target.arn
+  target_id        = "70.0.1.5"
+  port             = 80
+}
