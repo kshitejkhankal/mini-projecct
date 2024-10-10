@@ -9,3 +9,14 @@ resource "aws_lb" "project-lb" {
     
   
 }
+resource "aws_route53_record" "www" {
+  zone_id = "Z0534466PZH9OPTCRBP8"
+  name    = "krmkhub.in"
+  type    = "A"
+
+  alias {
+    name                   = aws_lb.project-lb.dns_name
+    zone_id                = "Z0534466PZH9OPTCRBP8"
+    evaluate_target_health = true
+  }
+}
