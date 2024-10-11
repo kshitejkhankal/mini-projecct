@@ -8,7 +8,8 @@ resource "aws_nat_gateway" "python-project-nat" {
   }
 }
 resource "aws_eip" "nat_gateway_eip" {
-  vpc = true
+  domain = "vpc"
+  
 }
 
 
